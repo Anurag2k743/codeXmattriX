@@ -1,26 +1,488 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 15px;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.box-shadow {
+  box-shadow: 0px 30px 84px rgb(255 255 255 / 8%), 0px 8px 32px rgb(213 213 213 / 7%), 0px 3px 14px rgb(19 10 46 / 3%), 0px 1px 3px rgb(19 10 46 / 13%);
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html{
+  scroll-behavior: smooth;
+}
+/* ---------------------button animation ------------- */
+
+  .btAnm {
+  --color: #ff4309;
+  font-family: 'GT04';
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  color: var(--color);
+}
+
+.btAnm:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 270px;
+  border-radius: 5px;
+}
+
+.btAnm:hover {
+  color: #fff;
+}
+
+.btAnm:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+.btAnm:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.box-shadow:active:before {
+  background: #ff4309;
+  transition: background 0s;
+}
+
+
+/* ----btn 2 animation---- */
+
+  
+  .btAnm2 {
+  --color: #000000;
+  font-family: 'GT04';
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.5s;
+  z-index: 1;
+}
+
+.btAnm2:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 270px;
+  /* border-radius: 10%; */
+}
+
+.btAnm2:hover {
+  color: #fff;
+}
+
+.btAnm2:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+.btAnm2:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.btAnm2:active:before {
+  background: #ff4309;
+  transition: background 0s;
+}
+
+
+/* ----btn 2 animation---- */
+
+/* ---------------------button animation ------------- */
+
+@font-face {
+  font-family: 'GT';
+  src: url('/fonts/GT-Walsheim-Black.otf') format('opentype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT01';
+  /* Thin */
+  src: url('/fonts/GT-Walsheim-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT02';
+  /* Ultra-Light */
+  src: url('/fonts/GT-Walsheim-ultra-Light.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT03';
+  /* Light */
+  src: url('/fonts/GT-Walsheim-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT04';
+  /* Regular */
+  src: url('/fonts/GT-Walsheim-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT05';
+  /* Medium */
+  src: url('/fonts/GT-Walsheim-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT06';
+  /* Semi-Bold or missing, optional */
+  src: url('/fonts/GT-Walsheim-SemiBold.otf') format('opentype');
+  /* Only if available */
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT07';
+  /* Bold */
+  src: url('/fonts/GT-Walsheim-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT08';
+  /* Ultra Bold */
+  src: url('/fonts/GT-Walsheim-Ultra-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT09';
+  /* Black */
+  src: url('/fonts/GT-Walsheim-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+h1,h3{
+  /* color: #0A1C20; */
+  font-family: 'GT07';
+}
+ h2{
+    font-family: 'GT07';
+ }
+h3{
+  font-size: 24px;
+ font-family: 'GT07';
+}
+
+h6,h4,span{
+  font-family: 'GT05';
+}
+p {
+  font-family: 'GT04';
+}
+
+button{
+  font-family: 'GT04';
+}
+
+
+/* -----------------slider start ------------------ */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -----------------slider End------------------ */
+
+.digit {
+  background-image: linear-gradient(180deg, #EAEAEE 0%, #EAEAEE00 100%);
+}
+
+.list li {
+  font-size: 14px;
+  font-family: 'GT03';
+  padding: 7px 0px;
+}
+
+/* footer   */
+.Footer-span {
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  font-weight: 700;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  /* background-color: black; */
+  color: white;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 15s linear infinite;
+}
+
+.slide-text {
+  display: flex;
+  white-space: nowrap;
+  /* font-size: 78px; */
+  font-weight: 900;
+}
+
+/* --------------footer slider---------------- */
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.copy-right {
+  font-size: 14px;
+  font-weight: 400;
 }
+
+.flag-section p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* --------------footer slider---------------- */
+
+
+/* -=----Logo animation---- */
+
+.video-main {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  /* Ensure positioning is relative for absolute positioning inside */
+}
+
+.video {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  z-index: 999;
+}
+
+@keyframes waves {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    opacity: 0.9;
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.fa-play:before {
+  content: "\f04b";
+}
+
+.waves {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: rgb(255 67 9 / 13%);
+  opacity: 0;
+  border-radius: 50%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  animation: waves 7s ease-in-out infinite;
+  top: 0;
+  margin: auto;
+  left: 0;
+}
+
+.wave-1 {
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  animation-delay: 1s;
+}
+
+.wave-3 {
+  animation-delay: 2s;
+}
+
+.wave-4 {
+  animation-delay: 3s;
+}
+
+.wave-5 {
+  animation-delay: 4s;
+}
+
+.wave-6 {
+  animation-delay: 5s;
+}
+
+@media screen and (max-width: 1200px) {
+  .waves {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .waves {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .waves {
+    width: 300px;
+    height: 300px;
+  }
+
+  .video {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .waves {
+    width: 250px;
+    height: 250px;
+  }
+
+  .video {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .waves {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .video {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+  }
+}
+
+/* <----------BACKGROUND IMAGES----------> */
+
+.Marketing-Design {
+  background-image: url('/Images/background-image5.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: contain; */
+}
+
+.line {
+  background-image: url('/Images/lineBackgroundimg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.InfluBackImg {
+  background-image: url('/images/influencerBackImg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+/* <----------BACKGROUND IMAGES----------> */
+
+
