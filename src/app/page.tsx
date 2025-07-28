@@ -1,20 +1,8 @@
 'use client';
 import Image from "next/image";
 import Carousel from "@/Components/Carousel";
-import { useState } from "react";
 
 export default function Home() {
-  const [selectedContent, setSelectedContent] = useState('Content for Ellipse 1');
-  const [selectedMenu, setSelectedMenu] = useState('Website Design');
-
-  const handleImageClick = (content: string) => {
-    setSelectedContent(content);
-  };
-
-  const handleMenuClick = (menu: string) => {
-    setSelectedMenu(menu);
-  };
-
   return (
     <>
       <div className="py-10 sm:py-14 md:py-15 lg:20 x:py-20 2xl:py-20">
