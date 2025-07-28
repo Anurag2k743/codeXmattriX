@@ -5,7 +5,7 @@ import Carousel from "@/Components/Carousel";
 export default function Home() {
   return (
     <>
-      <div className="py-10 sm:py-14 md:py-15 lg:20 x:py-20 2xl:py-30">
+      <div className="py-10 sm:py-14 md:py-15 lg:20 x:py-20 2xl:py-40">
         <div className="container">
           <div className="flex flex-col-reverse md:flex-row justify-between items-center flex-wrap">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
@@ -55,13 +55,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Corrected unescaped quote example */}
-      <div className="container py-10">
-        <p>&quot;CodeXMattrix is outstanding in every respect. He exceeded all expectations and communicated effectively throughout. He is creative, resourceful and thoughtful—a sincere pleasure to work with.&quot;</p>
-        <p>&quot;I think his unique approach (a tight combination of buyer psychology and ability to craft new offers) is more suited for rapid growth in revenues than anything else I have seen by Hawaii-based marketers.&quot;</p>
-        <p>&quot;We hope to re-engage again in the future.&quot;</p>
-        <p>He&apos;s a problem solver and ensures our systems perform 110% of the time.&quot;</p>
-      </div>
+    
 
       <Carousel />
     </>

@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-20 w-full py-2 bg-[#ffffff] transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-20 w-full py-3 bg-[#ffffff] transition-all duration-300 ${
         scrolled ? 'border-b border-[#DDDDDD] shadow-sm' : 'border-none'
       }`}
     >
