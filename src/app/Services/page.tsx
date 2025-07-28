@@ -1,180 +1,69 @@
 'use client';
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Carousel from "@/Components/Carousel";
 
-export default function Service() {
-    const [feedback, setfeedback] = useState('person1');
-    const [sticky, setsticky] = useState(false); // Change to boolean
-
-    const feedbackData = {
-        person1: {
-            name: "Aarav Mehta",
-            company: "TechNova Solutions",
-            feedback:
-                "Working with this team has been a seamless experience. Their attention to detail and creativity exceeded our expectations. They truly understood the core of our product and transformed it into a beautiful and user-friendly platform. Every revision was handled with care. We’ve already seen increased user engagement and retention since the redesign.",
-            image: '/Images/profileimg.jpg',
-        },
-        person2: {
-            name: "Sneha Sharma",
-            company: "BrightPixel Studios",
-            feedback:
-                "I’m really impressed by the timely delivery and excellent communication throughout the project. We had a complex product idea, but they simplified it and made it look elegant. Regular updates kept us in the loop at every stage. Our customers love the clean UI and seamless experience. This whole process felt like a true collaboration.",
-            image: '/Images/profileimg.jpg',
-        },
-        person3: {
-            name: "Rohan Kapoor",
-            company: "NeoTech Private Ltd.",
-            feedback:
-                "From start to finish, everything was handled with great care and professionalism. The website they built is fast, responsive, and visually stunning. Their team worked late hours to meet our tight deadlines. Since launch, we've had more leads and better customer feedback. We’ll definitely work with them again.",
-            image: '/Images/profileimg.jpg',
-        },
-        person4: {
-            name: "Priya Iyer",
-            company: "VisionNest Technologies",
-            feedback:
-                "Their team is full of creative minds. The designs were bold yet functional, and every pixel served a purpose. Their design thinking and research-driven process gave us confidence. What stood out was their focus on user experience. We got great feedback from our beta testers.",
-            image: '/Images/profileimg.jpg',
-        },
-        person5: {
-            name: "Kunal Deshmukh",
-            company: "Skyline Ventures",
-            feedback:
-                "They really care about the client's goals. Our online presence has drastically improved. Every part of the user journey was crafted thoughtfully. The visuals were on-brand and engaging. We’re proud to showcase this project to investors and clients.",
-            image: '/Images/profileimg.jpg',
-        },
-    };
-
-    useEffect(() => {
-        const scroll = () => {
-            if (window.scrollY > 325) {
-                setsticky(true);
-            } else {
-                setsticky(false);
-            }
-        }
-
-        window.addEventListener('scroll', scroll);
-
-        return () => {
-            window.removeEventListener('scroll', scroll);
-        };
-    }, []);
-
-    return (
-        <>
-            <div>
-                <div className="bg-[#FF4309] mt-[] py-10 text-center">
-                    <div className='container'>
-                        <h2 className='text-[32px] sm:text[26px] lg:text-[40px] text-white'>
-                            Strategy & Design That Delivers Results With Consistent Updates
-                        </h2>
-                        <h6 className='text-white text-[18px] sm:text-[22px] lg:text-[26px] px-2 xl:px-10'>
-                            We specialise in creating user-focused solutions that are highly valued for both the audience and your business. Our approach to designing is simple and result-driven enhancing user experience and achieving business goals on time.
-                        </h6>
-                    </div>
-                </div>
-
-                <div>
-                    <div className={`bg-white py-5 hidden lg:block shadow-xl ${sticky ? 'fixed top-0 right-0 left-0 bg-white shadow-xl z-50' : 'static'}`}>
-                        <ul className='flex justify-between container'>
-                            <li className='hover:text-[#0056b3] cursor-pointer'>
-                                <Link href="#Service">WEBDESIGN & DEVLOPMENT</Link>
-                            </li>
-                            <li className='hover:text-[#0056b3] cursor-pointer'>
-                                <Link href="#uiDesign" >UI & UX DESIGN</Link>
-                            </li>
-                            <li className='hover:text-[#0056b3] cursor-pointer'>
-                                <Link href="#MobileDev"> MOBILE DEVLOPMENT</Link>
-                            </li>
-                            <li className='hover:text-[#0056b3] cursor-pointer'>
-                                <Link href="#digital">DIGITAL PRODUCT DESIGN </Link>
-                            </li>
-                            <li className='hover:text-[#0056b3] cursor-pointer'>
-                                <Link href="#Marketing">MARKET DESIGN</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Sections */}
-                <div className='hidden lg:block bg-center bg-cover py-64 w-full' id="Service" style={{ backgroundImage: "url('/Images/backgroundATn.webp')" }}>
-                    <div className='container flex justify-between'>
-                        <div className=''></div>
-                        <div className='text-right lg:text-left w-[400px] 2xl:w-[400px]'>
-                            <h2 className='text-[32px] sm:text[26px] lg:text-[40px]'>
-                                Web Design & Development
-                            </h2>
-                            <p className='text-[16px] sm:text-[18px] lg:text-[18px]'>CodeXMatrixx offers end-to-end web design and development services, from in-depth design audits to prototyping and full-scale development. We not only revamp already existing sites but can create a 100% customized website according to your requirements that will create an exceptional user experience across all devices.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="lg:hidden px-4">
-                    <div className='text-left py-10'>
-                        <h2 className='text-[32px] sm:text[26px] lg:text-[40px]'>
-                            Web Design & Development
-                        </h2>
-                        <p className='text-wrap'>
-                            CodeXMatrixx offers end-to-end web design and development services, from in-depth design audits to prototyping and full-scale development. We not only revamp already existing sites but can create a 100% customized website according to your requirements that will create an exceptional user experience across all devices.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Feedback Section */}
-                <div className='bg-[#FF4309] text-white py-20 px-4'>
-                    <div className='container'>
-                        <h2 className='text-[32px] sm:text[26px] lg:text-[40px] w-full sm:w-full md:w-[760px] lg:w-[760px] xl:w-[760px] 2xl:w-[760px]'>
-                            Delivering Results For Startups & Businesses Since 2015.
-                        </h2>
-                    </div>
-                    <div className='container ' id="feedback">
-                        <div className='lg:flex justify-between'>
-                            <div className='lg:flex justify-between items-center'>
-                                <div className='py-4 lg:py-4 px-8'>
-                                    <Image
-                                        src={feedbackData[feedback].image}
-                                        className='rounded-[50%] w-50 '
-                                        alt=""
-                                        width={100}
-                                        height={100}
-                                    />
-                                </div>
-                                <div className='lg:w-100'>
-                                    <p className='2xl:w-[600px] lg:w-[600px] text-wrap text-[18px] sm:text-[22px] lg:text-[20px]'>
-                                        {feedbackData[feedback].feedback}
-                                    </p>
-                                    <div className='mt-4'>
-                                        <h3>{feedbackData[feedback].name}</h3>
-                                        <h4>{feedbackData[feedback].company}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* Feedback avatars */}
-                            <div>
-                                <div className='hidden lg:block'>
-                                    <ul className='bg-white p-6 w-full rounded flex flex-col mt-8 py-8'>
-                                        {Object.keys(feedbackData).map((key) => (
-                                            <li key={key} className='my-2' onClick={() => setfeedback(key)}>
-                                                <Image className={`rounded-[50%] opacity-50 ${feedback === key ? 'opacity-100' : 'opacity-50'}`} src={feedbackData[key].image} width={60} height={60} alt="" />
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <ul className='bg-white lg:hidden flex rounded justify-center flex-wrap mt-8 lg:w-full'>
-                                    {Object.keys(feedbackData).map((key) => (
-                                        <li key={key} className='m-1' onClick={() => setfeedback(key)}>
-                                            <Image className={`rounded-[50%] opacity-50 my-2 w-[40px] sm:w-[100px] ${feedback === key ? 'opacity-100' : 'opacity-50'}`} src={feedbackData[key].image} width={100} height={100} alt="" />
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* More sections as needed */}
+export default function Home() {
+  return (
+    <>
+      <div className="py-10 sm:py-14 md:py-15 lg:20 x:py-20 2xl:py-20">
+        <div className="container">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-center flex-wrap">
+            <div className="w-full md:w-1/2 mb-10 md:mb-0">
+              <h1 className="text-center sm:text-center md:text-left lg:text-left xl:text-left 2xl:text-left text-[29px] leading-[36px] md:leading-[50px] lg:leading-[77px] md:text-[44px] lg:text-[68px]">
+                Creative Digital  Design Agency <br /> with Max <br /> Conversions
+              </h1>
+              <p className="py-8 text-lg text-center text-[#464646] md:text-left sm:px-20 md:px-0  text-[15px] 2xl:text-[18px]">
+                We do not create Interfaces, we create experiences for users to drive results! ✨
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start space-x-4">
+                <button className="btAnm border-2 border-[#FF4309] text-[#EE3124] font-[GT03] px-5 py-3 mt-2">
+                  Explore Service
+                </button>
+                <button className="btAnm border-2 border-[#FF4309] text-[#EE3124] font-[GT03] px-5 py-3 mt-2">
+                  View Client Success Stories
+                </button>
+              </div>
             </div>
-        </>
-    )
+            <div className="w-full md:w-1/2 hidden sm:hidden md:block lg:block xl:block 2xl:block">
+              <div className="video-main relative">
+                <div className="promo-video">
+                  <div className="waves-block">
+                    <div className="waves wave-1"></div>
+                    <div className="waves wave-2"></div>
+                    <div className="waves wave-3"></div>
+                    <div className="waves wave-4"></div>
+                    <div className="waves wave-5"></div>
+                    <div className="waves wave-6"></div>
+                  </div>
+                </div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <Image src="/Images/Logo.webp" alt="" height={200} width={200} className="w-[100%]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="pt-5 sm:pt-10 md:pt-32 xl:pt-32 2xl:pt-32 max-w-[1765px] mx-auto bg-cover bg-center" style={{ backgroundImage: "url('/Images/bluebg.jpg')" }}>
+        <div className="container">
+          <div className="py-10 px-5 2xl:px-10 2xl:py-20 sm:w-[490px] sm:mx-auto md:mx-0 xl:w-[490px] 2xl:w-[490px] text-center bg-[#ffffff]">
+            <h2 className="text-[30px] 2xl:text-[38px]">Interfaces Being More People-Centric</h2>
+            <p className="py-2 text-[15px] 2xl:text-[18px] text-[#0a1c20]">We work on prioritizing the customer needs and engaging them through a clear message, appealing visuals and graphics.</p>
+            <p className="py-2 text-[15px] 2xl:text-[18px] text-[#0a1c20]">By crafting an experience that truly resonates with your audience, you build lasting trust and loyalty, ultimately driving sustainable growth. 📈.</p>
+            <button className="btAnm2 py-[14px] px-[60px] bg-[#ff4309] text-[#ffffff] text-[18px] mt-5 2xl:mt-15">Our Process</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Corrected unescaped quote example */}
+      <div className="container py-10">
+        <p>&quot;CodeXMattrix is outstanding in every respect. He exceeded all expectations and communicated effectively throughout. He is creative, resourceful and thoughtful—a sincere pleasure to work with.&quot;</p>
+        <p>&quot;I think his unique approach (a tight combination of buyer psychology and ability to craft new offers) is more suited for rapid growth in revenues than anything else I have seen by Hawaii-based marketers.&quot;</p>
+        <p>&quot;We hope to re-engage again in the future.&quot;</p>
+        <p>He&apos;s a problem solver and ensures our systems perform 110% of the time.&quot;</p>
+      </div>
+
+      <Carousel />
+    </>
+  );
 }

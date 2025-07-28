@@ -5,7 +5,7 @@ import Carousel from "@/Components/Carousel";
 export default function Home() {
   return (
     <>
-      <div className="py-10 sm:py-14 md:py-15 lg:20 x:py-20 2xl:py-20">
+      <div className="py-10 sm:py-14 md:py-15 lg:20 x:py-20 2xl:py-30">
         <div className="container">
           <div className="flex flex-col-reverse md:flex-row justify-between items-center flex-wrap">
             <div className="w-full md:w-1/2 mb-10 md:mb-0">
