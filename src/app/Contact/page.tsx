@@ -1,7 +1,6 @@
 "use client";
 import { FaSquareXTwitter, FaFacebook } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
-import Image from "next/image";
 
 export default function Page() {
     return (
