@@ -10,14 +10,13 @@ export default function Home() {
 
   const [selectedMenu, setSelectedMenu] = useState('Website Design');
   
-  const handleImageClick = (content) => {
-    setSelectedContent(content);
-  };
+const handleImageClick = (content: string) => {
+  setSelectedContent(content);
+};
 
-  // Handle the menu click
-  const handleMenuClick = (menu) => {
-    setSelectedMenu(menu);
-  };
+const handleMenuClick = (menu: string) => {
+  setSelectedMenu(menu);
+};
 
   return (
     <>
